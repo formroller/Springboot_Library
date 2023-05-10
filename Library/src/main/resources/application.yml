@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/library?createDatabaseIfNotExist=true
+    username: library
+    password: test
+
+  jpa:
+    hibernate:
+      ddlAuto: create
+    properties:
+      show_sql: true
+      format_sql: true
+      use_sql_comments: true # 주석 표시(쿼리문 출력)
+
+
+  logging:
+    level:
+      org:
+        hibernate:
+          type:
+            descriptor:
+              sql: trace # ?에 들어가는 값 표시
+          SQL: DEBUG
+
+
